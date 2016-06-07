@@ -29,7 +29,7 @@
             <div class="row" ng-controller="DatepickerPopupDemoCtrl">
                 <div class="col-md-6">
                     <p class="input-group">
-                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <input type="text" class="form-control" ng-model="feature.date" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                         <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
                         </span>
@@ -45,9 +45,9 @@
         <div class="form-group">
             <label>Behavior</label>
             <select class="form-control" ng-model="feature.behavior">
-                <option value="org">Org specific</option>
-                <option value="on">Globally on</option>
-                <option value="off">Globally off</option>
+                <option value="ORG_SPECIFIC">Org specific</option>
+                <option value="GLOBALLY_ON">Globally on</option>
+                <option value="GLOBALLY_OFF">Globally off</option>
             </select>
         </div>
         <div>

@@ -18,12 +18,19 @@
         margin: 10% !important;
     }
     
+    .nav,
+    .pagination,
+    .carousel,
+    .panel-title a {
+        cursor: pointer;
+    }
+    
     #ico {
         padding-left: 15%;
     }
     
     #createFF {
-        padding : 13px 15px !important;
+        padding: 13px 15px !important;
     }
     
     table {
@@ -46,13 +53,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="row in rowCollection">
-                <td class="col-md-1 text-center">{{row.Name}}</td>
-                <td class="col-md-1 text-center">{{row.Owner}}</td>
-                <td class="col-md-1 text-center">{{row.Expires | date}} </td>
-                <td class="col-md-1 text-center">{{row.Behavior}}</td>
-                <td class="col-md-1 text-center">3<span id="ico" class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
-            </tr>
+            
+                <tr ng-repeat="row in rowCollection" ng-click="trigModal(row)">
+                    <td class="col-md-1 text-center">{{row.Name}}</td>
+                    <td class="col-md-1 text-center">{{row.Owner}}</td>
+                    <td class="col-md-1 text-center">{{row.Expires | date}} </td>
+                    <td class="col-md-1 text-center">{{row.Behavior}}</td>
+                    <td class="col-md-1 text-center">3<span id="ico" class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                </tr>
+            
         </tbody>
     </table>
 
