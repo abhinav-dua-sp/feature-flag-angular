@@ -15,21 +15,21 @@
 </head>
 
 <body ng-app="myApp" >
-    <form ng-controller="test123" name="myForm">
+    <form ng-controller="test123">
         <div class="form-group">
             <label for="feature-name">Feature flag name</label>
-            <input type="text" name="fname" ng-value="row.Name" ng-model="feature.name" class="form-control">
+            <input type="text" ng-value="row.Name" class="form-control">
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" rows="3" ng-model="feature.description"></textarea>
+            <textarea class="form-control" rows="3" ng-model="row.Description"></textarea>
         </div>
         <div class="form-group">
             <label for="expires">Expires</label>
             <div class="row" ng-controller="DatepickerPopupDemoCtrl">
                 <div class="col-md-6">
                     <p class="input-group">
-                        <input type="text" class="form-control" ng-value="row.Expires | date" ng-model="feature.expires" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <input type="text" class="form-control" ng-value="row.Expires | date" ng-model="feature.date" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                         <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
                         </span>
@@ -44,8 +44,7 @@
         </div>
         <div class="form-group">
             <label>Behavior</label>
-            <select class="form-control" ng-init="Org specific" ng-value="row.Behavior" ng-model="feature.behavior">
-                <option value="">-- choose an option --</option>
+            <select class="form-control" ng-value="row.Behavior">
                 <option value="ORG_SPECIFIC" selected>Org specific</option>
                 <option value="GLOBALLY_ON">Globally on</option>
                 <option value="GLOBALLY_OFF">Globally off</option>
